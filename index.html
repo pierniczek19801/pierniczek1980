@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root { --hacker-green: #00b33c; }
-
     html, body { height:100%; margin:0; padding:0; }
     body {
       background:#000;
@@ -20,7 +19,6 @@
       overflow-y:auto;
       padding-bottom:50px;
     }
-
     #title {
       font-size:140px;
       margin:120px 0 20px;
@@ -30,7 +28,6 @@
       user-select:none;
       transition: all 1s ease-in-out;
     }
-
     #info {
       margin-top:40px;
       width:100%;
@@ -39,7 +36,6 @@
       padding:0 20px;
       box-sizing:border-box;
     }
-
     .line {
       font-size:84px;
       line-height:1.1;
@@ -53,17 +49,14 @@
       color:var(--hacker-green);
       text-shadow:0 0 8px rgba(0,179,60,0.15);
     }
-
     .line.show {
       opacity:1;
       transform:translateY(0);
     }
-
     @keyframes pulse {
       0%,100% { transform:scale(1); }
       50% { transform:scale(1.05); }
     }
-
     @media (max-width:900px){
       #title { font-size:72px; margin-top:80px; }
       .line { font-size:42px; }
@@ -87,7 +80,7 @@
       const infoDiv = document.getElementById('info');
       const music = document.getElementById('bgMusic');
 
-      // Spróbuj odtworzyć muzykę, ale nie przerywaj jeśli nie można
+      // odtwarzanie muzyki
       try {
         music.volume = 1.0;
         await music.play();
@@ -95,13 +88,7 @@
         console.warn("Muzyka nie mogła zostać odtworzona", e);
       }
 
-      // Poczekaj chwilę i animuj tytuł w górę
-      await new Promise(res => setTimeout(res, 1500));
-      title.style.transform = 'translateY(-200px)';
-      title.style.opacity = '0';
-      await new Promise(res => setTimeout(res, 1000));
-
-      // Ukryj tytuł i pokaż info
+      // ukrycie tytułu i pokazanie info
       title.style.display = 'none';
       infoDiv.style.display = 'block';
 
