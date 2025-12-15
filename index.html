@@ -69,10 +69,9 @@
   </div>
   <div id="info"></div>
 
-  <!-- audio tylko raz w body -->
-  <audio id="bgMusic" loop>
+  <!-- lokalny plik muzyczny -->
+  <audio id="bgMusic" loop autoplay>
     <source src="muzyka.mp3" type="audio/mpeg">
-    Twoja przeglądarka nie obsługuje audio.
   </audio>
 
   <script>
@@ -81,7 +80,7 @@
       const infoDiv = document.getElementById('info');
       const music = document.getElementById('bgMusic');
 
-      // odtwarzanie muzyki
+      // spróbuj odtworzyć muzykę od razu
       try {
         music.volume = 1.0;
         await music.play();
